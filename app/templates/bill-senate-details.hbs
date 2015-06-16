@@ -1,0 +1,21 @@
+<h3>Bill Details</h3>
+<div class="well">
+  <span class="bill-details-categories"> Title: </span> {{model.title}}
+  <br /><br />
+  <span class="bill-details-categories"> Description: </span>{{model.summary}}
+  <br /><br />
+  <span class="bill-details-categories"> Chamber: </span>{{model.chamber}}
+  <br /><br />
+  <span class="bill-details-categories"> Date Introduced: </span>{{model.action_dates.first}}
+  <br /><br />
+  <span class="bill-details-categories"> Sponsor(s): </span>
+    {{#each sponsor in model.sponsors}}
+      {{#link-to 'senate-contact' sponsor.leg_id}}
+        {{sponsor.name}}
+      {{/link-to}}
+    {{/each}}
+  <br /><br />
+
+</div>
+
+{{outlet}}

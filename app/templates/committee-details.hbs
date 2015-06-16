@@ -1,8 +1,9 @@
 <h3>Committee Details</h3>
-
-{{#each committee in model}}
-  <p><span class="bill-details-categories">Committee: </span>{{committee.committee_id}}</p>
-  <p><span class="bill-details-categories">Name: </span>{{committee.name}}</p>
-  <p><span class="bill-details-categories">Office: </span>{{committee.office}}</p>
-  <p><span class="bill-details-categories">Phone: </span>{{committee.phone}}</p>
-{{/each}}
+<div class="well">
+  {{#each committee in model}}
+    <p><span class="bill-details-categories">Committee: </span>{{committee.committee_id}}</p>
+    <p><span class="bill-details-categories">Name: </span>{{committee.name}}</p>
+    <p><span class="bill-details-categories">Office: </span>{{committee.office}}</p>
+    <p><span class="bill-details-categories">Phone: </span>{{committee.phone}}</p>
+  {{/each}}
+</div>

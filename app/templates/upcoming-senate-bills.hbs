@@ -1,24 +1,36 @@
-<h4>Bills coming up in the next week: {{model.length}}</h4>
+<div class="row">
+  <div class="col-md-6">
 
-<div class="tbody">
-  <table class="table table-striped">
-    <tr>
-      <th>
-        Bill ID
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-    {{#each bill in model}}
-      <tr>
-        <td>
-          {{bill.bill_id}}
-        </td>
-        <td>
-          {{bill.title}}
-        </td>
-      </tr>  
-    {{/each}}
-  </table>
+    <h4>Bills coming up in the next week: {{model.length}}</h4>
+
+    <div class="tbody">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>
+              Bill ID
+            </th>
+            <th>
+              Description
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bill in model}}
+            <tr>
+              <td>
+                {{#link-to 'bill-senate-details' bill.bill_id bill.session bill.state}}{{bill.bill_id}}{{/link-to}}
+              </td>
+              <td>
+                {{bill.title}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+    {{outlet}}
+  </div>
 </div>

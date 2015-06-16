@@ -1,19 +1,20 @@
 <h3>Bill Details</h3>
-
-{{#each bill in model}}
-  <span class="bill-details-categories"> Title: </span> {{bill.bill_id}}
-  <br /><br />
-  <span class="bill-details-categories"> Description: </span>{{bill.official_title}}
-  <br /><br />
-  <span class="bill-details-categories"> Chamber: </span>{{bill.chamber}}
-  <br /><br />
-  <span class="bill-details-categories"> Committee(s): </span>{{#each committee_id in bill.committee_ids}} {{#link-to 'committee-details' committee_id}}{{committee_id}}{{/link-to}} {{/each}}
-  <br /><br />
-  <span class="bill-details-categories"> Date Introduced: </span>{{bill.introduced_on}}
-  <br /><br />
-  <span class="bill-details-categories"> Sponsor: </span><span>{{bill.sponsor.title}}. {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</span>
-  <br /><br />
-  <a href="{{bill.last_version.urls.html}}">Latest Version</a>
-{{/each}}
+<div class="well">
+  {{#each bill in model}}
+    <span class="bill-details-categories"> Title: </span> {{bill.bill_id}}
+    <br /><br />
+    <span class="bill-details-categories"> Description: </span>{{bill.official_title}}
+    <br /><br />
+    <span class="bill-details-categories"> Chamber: </span>{{bill.chamber}}
+    <br /><br />
+    <span class="bill-details-categories"> Committee(s): </span>{{#each committee_id in bill.committee_ids}} {{#link-to 'committee-details' committee_id}}{{committee_id}}{{/link-to}} {{/each}}
+    <br /><br />
+    <span class="bill-details-categories"> Date Introduced: </span>{{bill.introduced_on}}
+    <br /><br />
+    <span class="bill-details-categories"> Sponsor: </span><span>{{bill.sponsor.title}}. {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</span>
+    <br /><br />
+    <a href="{{bill.last_version.urls.html}}">Latest Version</a>
+  {{/each}}
+</div>
 
 {{outlet}}

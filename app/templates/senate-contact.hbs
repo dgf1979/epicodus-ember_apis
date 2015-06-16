@@ -1,0 +1,13 @@
+<h3>Contact:</h3>
+<div class="well">
+  <img src="{{model.photo_url}}">
+  <br /><br />
+  <span class="bill-details-categories">Name: </span>{{model.full_name}}
+  <br /><br />
+  <span class="bill-details-categories">Address: </span>{{#each office in model.offices}}{{office.address}}{{/each}}
+  <br /><br />
+  <span class="bill-details-categories">Address: </span>{{#each office in model.offices}}{{office.phone}}{{/each}}
+  <br /><br />
+  <span class="bill-details-categories">Email: </span>{{model.email}}
+  <br /><br />
+</div>
