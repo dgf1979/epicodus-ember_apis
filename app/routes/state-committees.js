@@ -6,7 +6,9 @@ export default Ember.Route.extend({
    return Ember.$.getJSON(url).then(function(responseJSON) {
      var committees = [];
      responseJSON.forEach(function(committee) {
-       committees.push(committee);
+       if(committee.subcommittee === null) {
+         committees.push(committee);
+       }
      });
      return committees;
    });

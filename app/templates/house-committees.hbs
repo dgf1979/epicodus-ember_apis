@@ -1,7 +1,15 @@
 <h3>House Committees</h3>
 
+<div class="col-md-6">
 <ul>
-{{#each committee in model}}
-  <li>{{committee.name}}</li>
-{{/each}}
+    {{#each committee in model}}
+        <li>
+          {{#link-to 'subcommittees' committee.committee_id}}{{committee.name}}{{/link-to}}
+        </li>
+    {{/each}}
 </ul>
+</div>
+
+<div class="col-md-6">
+  {{outlet}}
+</div>

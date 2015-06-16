@@ -12,8 +12,10 @@ Router.map(function() {
   this.resource('upcoming-bills');
   this.resource('upcoming-senate-bills');
   this.resource('committees', function() {
+    this.resource('house-committees', function() {
+      this.resource('subcommittees', { path: 'subcommittee/:committee_id' });
+    });
     this.resource('state-committees');
-    this.resource('house-committees');
   });
 });
 
