@@ -1,0 +1,26 @@
+
+<h4>Bills coming up in the next week: {{model.length}}</h4>
+
+<div class="tbody">
+  <table class="table table-striped">
+    <tr>
+      <th>
+        Bill ID
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+    {{#each bill in model}}
+    <tr>
+      <td>
+        {{bill.bill_id}}
+      </td>
+      <td>
+        {{bill.description}}
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+
+</div>
