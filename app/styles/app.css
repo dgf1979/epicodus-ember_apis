@@ -2,3 +2,24 @@ span.bill-details-categories {
   font-style: italic;
   font-weight: bold;
 }
+
+.error {
+  font-size: 1.4em;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  padding: 2px 8px 2px 8px;
+}
+
+.top-words {
+  font-weight: bold;
+}
+
+.word-found-times {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+ul.no-list-style li {
+  list-style: none;
+}

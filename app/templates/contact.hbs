@@ -1,6 +1,12 @@
 <h1>Contacts:</h1>
-<ul>
-  {{#each legislator in model}}
-    <li><span class="legislator-name"> {{legislator.first_name}} {{legislator.last_name}} </span><br> Contact: <a href={{legislator.contact_form}}>{{legislator.contact_form}}</a></li>
-  {{/each}}
-</ul>
+{{#if model.length}}
+  <ul>
+    {{#each legislator in model}}
+      <li><span class="legislator-name"> {{legislator.first_name}} {{legislator.last_name}} </span><br> Contact: <a href={{legislator.contact_form}}>{{legislator.contact_form}}</a></li>
+    {{/each}}
+  </ul>
+{{else}}
+  <span class="error">
+    ERROR: There are no results. Check that you entered a valid ZIP code.
+  </span>
+{{/if}}

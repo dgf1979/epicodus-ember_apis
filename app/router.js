@@ -6,7 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('legislators', { path: '/' }, function() {
+  this.resource('oregon-words', { path: '/' });
+  this.resource('legislators', function() {
     this.resource('contact', { path: 'contact/:zip' });
   });
   this.resource('upcoming-bills', function() {

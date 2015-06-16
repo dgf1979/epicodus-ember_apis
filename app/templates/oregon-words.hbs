@@ -1,0 +1,7 @@
+<h2>Top 10 Words in Oregon Politics Today...</h2>
+
+<ul class="no-list-style">
+  {{#each word in model}}
+    <li> <span class="top-words">{{word.ngram}}</span> - <span class="word-found-times">Found {{word.count}} times</span></li>
+  {{/each}}
+</ul>
