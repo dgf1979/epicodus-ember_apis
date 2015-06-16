@@ -10,6 +10,7 @@ Router.map(function() {
     this.resource('contact', { path: 'contact/:zip' });
   });
   this.resource('upcoming-bills');
+  this.resource('upcoming-senate-bills');
 });
 
 export default Router;
