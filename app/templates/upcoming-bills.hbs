@@ -3,8 +3,9 @@
 
     <h4>Bills coming up in the next week: {{model.length}}</h4>
 
-    <div class="tbody">
-      <table class="table table-striped">
+
+    <table class="table table-bordered table-striped">
+      <thead>
         <tr>
           <th>
             Bill ID
@@ -13,6 +14,8 @@
             Description
           </th>
         </tr>
+      </thead>
+      <tbody>
         {{#each bill in model}}
         <tr>
           <td>
@@ -23,9 +26,10 @@
           </td>
         </tr>
         {{/each}}
-      </table>
+      </tbody>
+    </table>
 
-    </div>
+
   </div>
   <div class="col-md-6">
     {{outlet}}

@@ -1,5 +1,17 @@
 <h5>Bill Details</h5>
 
 {{#each bill in model}}
-  {{bill.chamber}}
+  <span class="bill-details-categories"> Title: </span> {{bill.bill_id}}
+  <br /><br />
+  <span class="bill-details-categories"> Description: </span>{{bill.official_title}}
+  <br /><br />
+  <span class="bill-details-categories"> Chamber: </span>{{bill.chamber}}
+  <br /><br />
+  <span class="bill-details-categories"> Committee(s): </span>{{#each committee_id in bill.committee_ids}} {{committee_id}} {{/each}}
+  <br /><br />
+  <span class="bill-details-categories"> Date Introduced: </span>{{bill.introduced_on}}
+  <br /><br />
+  <span class="bill-details-categories"> Sponsor: </span><span>{{bill.sponsor.title}}. {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</span>
+  <br /><br />
+  <a href="{{bill.last_version.urls.html}}">Latest Version</a> 
 {{/each}}
