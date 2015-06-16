@@ -10,7 +10,9 @@ Router.map(function() {
     this.resource('contact', { path: 'contact/:zip' });
   });
   this.resource('upcoming-bills', function() {
-    this.resource('bill-details', { path: 'bill-details/:bill_id' });
+    this.resource('bill-details', { path: 'bill-details/:bill_id' }, function() {
+      this.resource('committee-details', { path: 'committee-details/:committee_id' });
+    });
   });
   this.resource('upcoming-senate-bills');
   this.resource('committees', function() {
