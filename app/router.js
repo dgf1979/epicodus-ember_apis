@@ -9,7 +9,9 @@ Router.map(function() {
   this.resource('legislators', { path: '/' }, function() {
     this.resource('contact', { path: 'contact/:zip' });
   });
-  this.resource('upcoming-bills');
+  this.resource('upcoming-bills', function() {
+    this.resource('bill-details', { path: 'bill-details/:bill_id' });
+  });
   this.resource('upcoming-senate-bills');
   this.resource('committees', function() {
     this.resource('house-committees', function() {

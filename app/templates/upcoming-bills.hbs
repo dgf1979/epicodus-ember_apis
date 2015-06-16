@@ -1,26 +1,33 @@
+<div class="row">
+  <div class="col-md-6">
 
-<h4>Bills coming up in the next week: {{model.length}}</h4>
+    <h4>Bills coming up in the next week: {{model.length}}</h4>
 
-<div class="tbody">
-  <table class="table table-striped">
-    <tr>
-      <th>
-        Bill ID
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-    {{#each bill in model}}
-    <tr>
-      <td>
-        {{bill.bill_id}}
-      </td>
-      <td>
-        {{bill.description}}
-      </td>
-    </tr>
-    {{/each}}
-  </table>
+    <div class="tbody">
+      <table class="table table-striped">
+        <tr>
+          <th>
+            Bill ID
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+        {{#each bill in model}}
+        <tr>
+          <td>
+            {{#link-to 'bill-details' bill.bill_id}}{{bill.bill_id}}{{/link-to}}
+          </td>
+          <td>
+            {{bill.description}}
+          </td>
+        </tr>
+        {{/each}}
+      </table>
 
+    </div>
+  </div>
+  <div class="col-md-6">
+    {{outlet}}
+  </div>
 </div>
